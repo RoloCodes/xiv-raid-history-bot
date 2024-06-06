@@ -145,7 +145,7 @@ async function fetchRecruitTier(charName, world, zone, authToken) {
     } ${jobList[2] ? `${emojiFromJob(jobList[2])}` : ''}`
     return `**${zone[0].toUpperCase() + zone.slice(1)}:** ${color} - ${
       messages[bossesKilled]
-    } ${weeks != -1 ? '**Week ' + weeks + '**' : ''} ${jobEmojis}`
+    } ${weeks != -1 ? '⏱️ **Week ' + weeks + '**' : ''} ${jobEmojis}`
   } catch (error) {
     console.error(error)
   }
