@@ -3,7 +3,7 @@ const fetchRecruit = require('./fetchRecruit')
 require('./keep-alive')
 
 require('dotenv').config()
-const { BOT_TOKEN, FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
+const { BOT_TOKEN } = process.env
 
 const client = new Client({
   intents: [
@@ -23,8 +23,6 @@ client.on(Events.InteractionCreate, async function (interaction) {
 
   const options = interaction.options
   if (interaction.commandName == 'getplayer') {
-    // const embed = new EmbedBuilder()
-    // interaction.reply({ embeds: [embed] })
     const firstName = options.get('firstname').value
     const lastName = options.get('lastname').value
     const worldName = options.get('world').value
