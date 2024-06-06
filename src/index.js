@@ -1,6 +1,6 @@
 const { Client, IntentsBitField, Events, EmbedBuilder } = require('discord.js')
 const fetchRecruit = require('./fetchRecruit')
-require('./keep-alive')
+// require('./keep-alive')
 
 require('dotenv').config()
 const { BOT_TOKEN } = process.env
