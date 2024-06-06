@@ -1,6 +1,6 @@
 const { Client, IntentsBitField, Events, EmbedBuilder } = require('discord.js')
-const axios = require('axios')
 const fetchRecruit = require('./fetchRecruit')
+require('./keep-alive')
 
 require('dotenv').config()
 const { BOT_TOKEN, FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
