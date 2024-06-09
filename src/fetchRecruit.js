@@ -8,6 +8,10 @@ function getRegion(world) {
     return 'na'
   } else if (worldsByRegion.oce.includes(world.toLowerCase())) {
     return 'oce'
+  } else if (worldsByRegion.eu.includes(world.toLowerCase())) {
+    return 'eu'
+  } else if (worldsByRegion.jp.includes(world.toLowerCase())) {
+    return 'jp'
   } else {
     return 'other'
   }
@@ -39,8 +43,8 @@ async function fetchRecruitTier(charName, world, zone, authToken) {
 
   const region = getRegion(world)
   if (region == 'other') {
-    console.log('Player is not in NA or world name is incorrect')
-    return 'Only NA Data Centers are currently supported'
+    console.log('Invalid world name or world not yet supported')
+    return 'Invalid world name or world not yet supported'
   }
 
   const graphqlQuery = `
@@ -171,7 +175,8 @@ async function fetchRecruitUlti(charName, world, encounter, authToken) {
 
   const region = getRegion(world)
   if (region == 'other') {
-    console.log('Player is not in NA or world name is incorrect')
+    console.log('Invalid world name or world not yet supported')
+    return 'Invalid world name or world not yet supported'
   }
 
   const graphqlQuery = `
