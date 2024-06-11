@@ -25,9 +25,13 @@ module.exports = {
       'Malboro',
       'Mateus',
       'Zalera',
+      'Cuchulainn',
+      'Golem',
       'Halicarnassus',
+      'Kraken',
       'Maduin',
       'Marilith',
+      'Rafflesia',
       'Seraph',
     ].map((s) => s.toLowerCase()),
     oce: ['Bismarck', 'Ravana', 'Sephirot', 'Sophia', 'Zurvan'].map((s) =>
