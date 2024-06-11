@@ -54,6 +54,10 @@ module.exports = {
       'Shiva',
       'Twintania',
       'Zodiark',
+      'Innocence',
+      'Pixie',
+      'Titania',
+      'Tycoon'
     ].map((s) => s.toLowerCase()),
     jp: [
       'Aegis',
