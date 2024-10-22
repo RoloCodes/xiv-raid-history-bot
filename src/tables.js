@@ -57,7 +57,7 @@ module.exports = {
       'Innocence',
       'Pixie',
       'Titania',
-      'Tycoon'
+      'Tycoon',
     ].map((s) => s.toLowerCase()),
     jp: [
       'Aegis',
@@ -108,14 +108,127 @@ module.exports = {
     Ninja: { abbrv: 'NIN', emojiID: '1248166746225901651' },
     Samurai: { abbrv: 'SAM', emojiID: '1248166898290393139' },
     Reaper: { abbrv: 'RPR', emojiID: '1248166760067108875' },
-    Viper: { abbrv: 'VPR', emojiID: '' },
+    Viper: { abbrv: 'VPR', emojiID: '1298036120134619248' },
     Bard: { abbrv: 'BRD', emojiID: '1248166297922175058' },
     Machinist: { abbrv: 'MCH', emojiID: '1248166716547137608' },
     Dancer: { abbrv: 'DNC', emojiID: '1248166383234060348' },
     BlackMage: { abbrv: 'BLM', emojiID: '1248166355782340639' },
     Summoner: { abbrv: 'SMN', emojiID: '1248166920310755340' },
     RedMage: { abbrv: 'RDM', emojiID: '1248166775476977664' },
-    BlueMage: { abbrv: 'BLU', emojiID: '' },
-    Pictomancer: { abbrv: 'PIC', emojiID: '' },
+    BlueMage: { abbrv: 'BLU', emojiID: '1298036515900887111' },
+    Pictomancer: { abbrv: 'PCT', emojiID: '1298036081954000936' },
   },
+  ultimateEncounters: [
+    { name: 'TOP', ids: [1068, 1077], release: 1674547200000 },
+    { name: 'DSR', ids: [1065, 1076], release: 1650960000000 },
+    { name: 'TEA', ids: [1050, 1062, 1075], release: 1573459200000 },
+    { name: 'UWU', ids: [1042, 1048, 1061, 1074], release: 1528185600000 },
+    { name: 'UCOB', ids: [1039, 1047, 1060, 1073], release: 1508832000000 },
+  ],
+  savageZones: [
+    {
+      name: 'AAC LHW',
+      expansion: 'Dawntrail',
+      id: 62,
+      finalBossId: 96,
+      bosses: 4,
+      release: 1722308400000,
+    }, // Jul 30, 2024
+    {
+      name: 'Anabaseios',
+      expansion: 'Endwalker',
+      id: 54,
+      finalBossId: 92,
+      bosses: 5,
+      release: 1685433600000,
+    }, // May 30, 2023
+    {
+      name: 'Abyssos',
+      expansion: 'Endwalker',
+      id: 49,
+      finalBossId: 87,
+      bosses: 5,
+      release: 1661846400000,
+    }, // Aug 30, 2022
+    {
+      name: 'Asphodelos',
+      expansion: 'Endwalker',
+      id: 44,
+      finalBossId: 82,
+      bosses: 5,
+      release: 1641283200000,
+    }, // Jan  04, 2022
+    {
+      name: 'Promise',
+      expansion: 'Shadowbringers',
+      id: 38,
+      finalBossId: 77,
+      bosses: 5,
+      release: 1607328000000,
+    }, // Dec 07, 2020
+    {
+      name: 'Verse',
+      expansion: 'Shadowbringers',
+      id: 33,
+      finalBossId: 72,
+      bosses: 4,
+      release: 1582012800000,
+    }, // Feb 18, 2020
+    {
+      name: 'Gate',
+      expansion: 'Shadowbringers',
+      id: 29,
+      finalBossId: 68,
+      bosses: 4,
+      release: 1564455600000,
+    }, // Jul 30, 2019
+    {
+      name: 'Alphascape',
+      expansion: 'Stormblood',
+      id: 25,
+      finalBossId: 64,
+      bosses: 5,
+      release: 1537257600000,
+    }, // Sep 18, 2018
+    {
+      name: 'Sigmascape',
+      expansion: 'Stormblood',
+      id: 21,
+      finalBossId: 55,
+      bosses: 5,
+      release: 1517299200000,
+    }, // Jan 30, 2018
+    {
+      name: 'Deltascape',
+      expansion: 'Stormblood',
+      id: 17,
+      finalBossId: 46,
+      bosses: 5,
+      release: 1500364800000,
+    }, // Jul 18, 2017
+    {
+      name: 'Creator',
+      expansion: 'Heavensward',
+      id: 13,
+      finalBossId: 37,
+      bosses: 4,
+      release: 1474963200000,
+    }, // Sep 27, 2016
+    {
+      name: 'Midas',
+      expansion: 'Heavensward',
+      id: 10,
+      finalBossId: 29,
+      bosses: 4,
+      release: 1456257600000,
+    }, // Feb 23, 2016
+    {
+      name: 'Gordias',
+      expansion: 'Heavensward',
+      id: 7,
+      finalBossId: 21,
+      bosses: 4,
+      release: 1437465600000,
+    }, // Jul 21, 2015
+  ],
 }
