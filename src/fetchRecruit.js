@@ -80,7 +80,7 @@ async function fetchRecruit(charName, world) {
     const discordMessage = `
       # ${capCharName} - ${cap(world)}
 
-      Logs: <https://www.fflogs.com/character/id/${lodestoneId}>
+      Logs: <https://www.fflogs.com/character/lodestone-id/${lodestoneId}>
       Tomestone: https://tomestone.gg/character/${lodestoneId}/${charName.replace(
       ' ',
       '-'
