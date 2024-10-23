@@ -27,10 +27,13 @@ client.on(Events.InteractionCreate, async function (interaction) {
     const lastName = options.get('lastname').value
     const worldName = options.get('world').value
     const charName = `${firstName} ${lastName}`
-    const embed = new EmbedBuilder().setDescription(
-      await fetchRecruit(charName, worldName)
-    )
-    interaction.reply({ embeds: [embed] })
+    interaction.reply('...fetching data...')
+
+    const recruit = await fetchRecruit(charName, worldName)
+    const embed = new EmbedBuilder().setDescription(recruit.discordMessage)
+    const urlString = `FFLogs: <${recruit.fflogsURL}>\nTomestone: ${recruit.tomestoneURL}`
+    await interaction.editReply({ embeds: [embed], content: '' })
+    interaction.followUp(urlString)
   }
 })
 

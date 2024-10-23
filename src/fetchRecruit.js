@@ -78,15 +78,14 @@ async function fetchRecruit(charName, world) {
       .join(' ')
 
     const lodestoneId = response.data.data.characterData.character.lodestoneID
+    const fflogsURL = `https://www.fflogs.com/character/lodestone-id/${lodestoneId}`
+    const tomestoneURL = `https://tomestone.gg/character/${lodestoneId}/${charName.replace(
+      ' ',
+      '-'
+    )}`
 
     const discordMessage = `
       # ${capCharName} - ${cap(world)}
-
-      Logs: <https://www.fflogs.com/character/lodestone-id/${lodestoneId}>
-      Tomestone: https://tomestone.gg/character/${lodestoneId}/${charName.replace(
-      ' ',
-      '-'
-    )}
 
       ## __Savage__
       ${savageResponses.join('\n')}
@@ -95,7 +94,7 @@ async function fetchRecruit(charName, world) {
       ${ultimateResponses.join('\n')} 
     `.replace(/^ +/gm, '')
 
-    return discordMessage
+    return { discordMessage, lodestoneId, fflogsURL, tomestoneURL }
   } catch (error) {
     console.log(error)
   }
