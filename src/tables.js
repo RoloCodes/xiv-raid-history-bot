@@ -164,7 +164,7 @@ module.exports = {
       id: 38,
       finalBossId: 77,
       bosses: 5,
-      release: 1607328000000,
+      release: 1607414400000,
     }, // Dec 07, 2020
     {
       name: 'Verse',
