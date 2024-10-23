@@ -1,7 +1,8 @@
-const { Client, IntentsBitField, Events, EmbedBuilder } = require('discord.js')
-const fetchRecruit = require('./fetchRecruit')
+import { Client, IntentsBitField, Events, EmbedBuilder } from 'discord.js'
+import fetchRecruit from './fetchRecruit.js'
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 const { BOT_TOKEN } = process.env
 
 const client = new Client({

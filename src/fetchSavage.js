@@ -1,12 +1,12 @@
-const axios = require('axios')
-const { savageZones } = require('./tables.js')
-const {
+import axios from 'axios'
+import { savageZones } from './tables.js'
+import {
   getRegion,
   emojiFromJob,
   colorCheck,
   getEarliestClear,
   timeDiffInWeeks,
-} = require('./utils.js')
+} from './utils.js'
 
 async function fetchSavage(charName, world, zoneId, authToken) {
   const zone = savageZones.find((item) => item.id === zoneId)
@@ -126,4 +126,4 @@ async function fetchSavage(charName, world, zoneId, authToken) {
   }
 }
 
-module.exports = fetchSavage
+export default fetchSavage

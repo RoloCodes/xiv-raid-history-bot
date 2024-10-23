@@ -1,12 +1,12 @@
-const axios = require('axios')
-const { ultimateEncounters } = require('./tables.js')
-const {
+import axios from 'axios'
+import { ultimateEncounters } from './tables.js'
+import {
   getRegion,
   emojiFromJob,
   colorCheck,
   getEarliestClear,
   timeDiffInWeeks,
-} = require('./utils.js')
+} from './utils.js'
 
 async function fetchUltimate(charName, world, encounterName, authToken) {
   const encounter = ultimateEncounters.find(
@@ -97,4 +97,4 @@ async function fetchUltimate(charName, world, encounterName, authToken) {
   }
 }
 
-module.exports = fetchUltimate
+export default fetchUltimate

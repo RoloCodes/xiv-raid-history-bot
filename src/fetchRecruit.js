@@ -1,10 +1,12 @@
-const axios = require('axios')
-require('dotenv').config()
+import axios from 'axios'
+import dotenv from 'dotenv'
+dotenv.config()
+import { savageZones, ultimateEncounters } from './tables.js'
+import fetchSavage from './fetchSavage.js'
+import fetchUltimate from './fetchUltimate.js'
+import { getRegion, cap } from './utils.js'
+
 const { FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
-const { savageZones, ultimateEncounters } = require('./tables.js')
-const fetchSavage = require('./fetchSavage.js')
-const fetchUltimate = require('./fetchUltimate.js')
-const { getRegion, cap } = require('./utils.js')
 
 async function fetchRecruit(charName, world) {
   const authToken = await axios.post(
@@ -54,8 +56,6 @@ async function fetchRecruit(charName, world) {
       return `Character not found or logs for this character are hidden`
     }
 
-    const lodestoneId = response.data.data.characterData.character.lodestoneID
-
     const savageRequests = Promise.all(
       savageZones.map((zone) =>
         fetchSavage(charName, world, zone.id, authToken)
@@ -76,6 +76,8 @@ async function fetchRecruit(charName, world) {
       .split(' ')
       .map((word) => cap(word))
       .join(' ')
+
+    const lodestoneId = response.data.data.characterData.character.lodestoneID
 
     const discordMessage = `
       # ${capCharName} - ${cap(world)}
@@ -99,4 +101,4 @@ async function fetchRecruit(charName, world) {
   }
 }
 
-module.exports = fetchRecruit
+export default fetchRecruit
