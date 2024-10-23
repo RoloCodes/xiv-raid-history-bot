@@ -132,7 +132,7 @@ module.exports = {
       id: 62,
       finalBossId: 96,
       bosses: 4,
-      release: 1722308400000,
+      release: 1722326400000,
     }, // Jul 30, 2024
     {
       name: 'Anabaseios',
@@ -180,7 +180,7 @@ module.exports = {
       id: 29,
       finalBossId: 68,
       bosses: 4,
-      release: 1564455600000,
+      release: 1564473600000,
     }, // Jul 30, 2019
     {
       name: 'Alphascape',
