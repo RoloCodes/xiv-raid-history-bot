@@ -31,9 +31,12 @@ client.on(Events.InteractionCreate, async function (interaction) {
 
     const recruit = await fetchRecruit(charName, worldName)
     const embed = new EmbedBuilder().setDescription(recruit.discordMessage)
-    const urlString = `FFLogs: <${recruit.fflogsURL}>\nTomestone: ${recruit.tomestoneURL}`
     await interaction.editReply({ embeds: [embed], content: '' })
-    interaction.followUp(urlString)
+
+    if (!recruit.error) {
+      const urlString = `FFLogs: <${recruit.fflogsURL}>\nTomestone: ${recruit.tomestoneURL}`
+      interaction.followUp(urlString)
+    }
   }
 })
 

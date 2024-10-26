@@ -9,24 +9,28 @@ import { getRegion, cap } from './utils.js'
 const { FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
 
 async function fetchRecruit(charName, world) {
-  const authToken = await axios.post(
-    `https://www.fflogs.com/oauth/token`,
-    { grant_type: 'client_credentials' },
-    {
-      auth: {
-        username: FFLOGS_CLIENT_ID,
-        password: FFLOGS_SECRET_ID,
-      },
+  try {
+    const authToken = await axios.post(
+      `https://www.fflogs.com/oauth/token`,
+      { grant_type: 'client_credentials' },
+      {
+        auth: {
+          username: FFLOGS_CLIENT_ID,
+          password: FFLOGS_SECRET_ID,
+        },
+      }
+    )
+
+    const region = getRegion(world)
+    if (region == 'other') {
+      console.log('Player cannot play in NA or world name is incorrect')
+      return {
+        discordMessage: `Invalid world name or world not yet supported`,
+        error: true,
+      }
     }
-  )
 
-  const region = getRegion(world)
-  if (region == 'other') {
-    console.log('Player cannot play in NA or world name is incorrect')
-    return `Player cannot play in NA or world name is incorrect`
-  }
-
-  const graphqlQuery = `
+    const graphqlQuery = `
     query CharacterData {
         characterData {
             character(name: "${charName}", serverSlug: "${world}", serverRegion: "${region}") {
@@ -37,7 +41,6 @@ async function fetchRecruit(charName, world) {
     }
   `
 
-  try {
     const response = await axios.post(
       `https://www.fflogs.com/api/v2/client`,
       JSON.stringify({
@@ -53,7 +56,10 @@ async function fetchRecruit(charName, world) {
 
     if (response.data.data.characterData.character == null) {
       console.log('character not found')
-      return `Character not found or logs for this character are hidden`
+      return {
+        discordMessage: `Character not found or logs for this character are hidden`,
+        error: true,
+      }
     }
 
     const savageRequests = Promise.all(
@@ -97,6 +103,7 @@ async function fetchRecruit(charName, world) {
     return { discordMessage, lodestoneId, fflogsURL, tomestoneURL }
   } catch (error) {
     console.log(error)
+    return { discordMessage: error, error: true }
   }
 }
 

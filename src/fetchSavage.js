@@ -16,10 +16,6 @@ async function fetchSavage(charName, world, zoneId, authToken) {
   }
 
   const region = getRegion(world)
-  if (region == 'other') {
-    console.log('Invalid world name or world not yet supported')
-    return 'Invalid world name or world not yet supported'
-  }
 
   const graphqlQuery = `
     query CharacterData {

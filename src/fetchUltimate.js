@@ -19,10 +19,6 @@ async function fetchUltimate(charName, world, encounterName, authToken) {
   }
 
   const region = getRegion(world)
-  if (region == 'other') {
-    console.log('Invalid world name or world not yet supported')
-    return 'Invalid world name or world not yet supported'
-  }
 
   const queries = encounter.ids.map(
     (id) => `
