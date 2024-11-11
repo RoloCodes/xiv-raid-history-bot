@@ -5,6 +5,7 @@ import { savageZones, ultimateEncounters } from './tables.js'
 import fetchSavage from './fetchSavage.js'
 import fetchUltimate from './fetchUltimate.js'
 import { getRegion, cap } from './utils.js'
+import { getTrolled } from './trollExceptions'
 
 const { FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
 
@@ -78,10 +79,12 @@ async function fetchRecruit(charName, world) {
       ultimateRequests,
     ])
 
-    const capCharName = charName
-      .split(' ')
-      .map((word) => cap(word))
-      .join(' ')
+    const capCharName = getTrolled(
+      charName
+        .split(' ')
+        .map((word) => cap(word))
+        .join(' ')
+    )
 
     const lodestoneId = response.data.data.characterData.character.lodestoneID
     const fflogsURL = `https://www.fflogs.com/character/lodestone-id/${lodestoneId}`

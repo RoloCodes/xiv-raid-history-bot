@@ -1,6 +1,8 @@
-const { REST, Routes, ApplicationCommandOptionType } = require('discord.js')
+import { REST, Routes, ApplicationCommandOptionType } from 'discord.js'
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
+
 const { BOT_TOKEN, CLIENT_ID } = process.env
 
 const commands = [
