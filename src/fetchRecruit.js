@@ -5,7 +5,7 @@ import { savageZones, ultimateEncounters } from './tables.js'
 import fetchSavage from './fetchSavage.js'
 import fetchUltimate from './fetchUltimate.js'
 import { getRegion, cap } from './utils.js'
-import { getTrolled } from './trollExceptions'
+import { getTrolled } from './trollExceptions.js'
 
 const { FFLOGS_CLIENT_ID, FFLOGS_SECRET_ID } = process.env
 

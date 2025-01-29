@@ -123,6 +123,7 @@ export const ultimateEncounters = [
   { name: 'TEA', ids: [1050, 1062, 1075], release: 1573459200000 },
   { name: 'UWU', ids: [1042, 1048, 1061, 1074], release: 1528185600000 },
   { name: 'UCOB', ids: [1039, 1047, 1060, 1073], release: 1508832000000 },
+  { name: 'FRU', ids: [1079], release: 1732608000000 },
 ]
 export const savageZones = [
   {
