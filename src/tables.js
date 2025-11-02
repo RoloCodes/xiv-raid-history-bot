@@ -131,6 +131,7 @@ export const savageZones = [
     expansion: 'Dawntrail',
     id: 68,
     finalBossId: 100,
+    bosses: 4,
     release: 1743501600000,
   }, // April 1, 2025
   {
