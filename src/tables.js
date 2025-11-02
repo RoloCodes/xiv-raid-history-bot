@@ -127,6 +127,13 @@ export const ultimateEncounters = [
 ]
 export const savageZones = [
   {
+    name: 'AAC CW',
+    expansion: 'Dawntrail',
+    id: 68,
+    finalBossId: 100,
+    release: 1743501600000,
+  }, // April 1, 2025
+  {
     name: 'AAC LHW',
     expansion: 'Dawntrail',
     id: 62,

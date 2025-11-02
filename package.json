@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "deploy-commands": "node src/deploy-commands.js",
+    "deploy-commands": "node src/deploy-commands.js", 
+    "deploy": "fly deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
